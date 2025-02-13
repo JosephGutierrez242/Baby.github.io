@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Te Amo, Mi Amor</title>
+  <style>
+    body {
+      background-color: #ffe6e6;
+      font-family: 'Arial', sans-serif;
+      color: #333;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 3em;
+      color: #ff3366;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+      margin-bottom: 0.5em;
+    }
+    p {
+      font-size: 1.5em;
+      max-width: 600px;
+      margin-bottom: 1em;
+    }
+    .counter {
+      font-size: 2em;
+      margin: 20px 0;
+    }
+    .heart {
+      color: #ff3366;
+      font-size: 1.2em;
+      animation: beat 1s infinite;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    @keyframes beat {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <h1>Te Amo, Mi Novia</h1>
+  <p>
+    Desde el primer día supe que eras la persona indicada para mí. Cada momento contigo es un regalo, y no puedo esperar para seguir creando recuerdos juntos.
+  </p>
+  <div class="counter">
+    Llevamos <span id="daysCounter"></span> días juntos <span class="heart">❤️</span>
+  </div>
+
+  <script>
+    // Fecha de inicio de la relación (modifica la fecha según corresponda)
+    const startDate = new Date("2025-01-10T00:00:00");
+
+    function updateCounter() {
+      const now = new Date();
+      const diff = now - startDate;
+      // Convertir la diferencia en milisegundos a días completos
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      document.getElementById("daysCounter").textContent = days;
+    }
+
+    // Actualiza el contador inmediatamente y luego cada segundo
+    updateCounter();
+    setInterval(updateCounter, 1000);
+  </script>
+</body>
+</html>
